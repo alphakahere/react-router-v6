@@ -1,13 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+	const activeLinkStyle = ({ isActive }) => {
+		return {
+			color: isActive && "red",
+		};
+	};
 	return (
 		<nav className="navbar navbar-expand-lg bg-light mb-4">
 			<div className="container-fluid">
-				<Link className="navbar-brand" to="/">
+				<NavLink className="navbar-brand" to="/">
 					React Router V6
-				</Link>
+				</NavLink>
 				<button
 					className="navbar-toggler"
 					type="button"
@@ -22,19 +27,31 @@ const Navbar = () => {
 				<div className="collapse navbar-collapse" id="navbarNav">
 					<ul className="navbar-nav">
 						<li className="nav-item">
-							<Link className="nav-link" to="/">
+							<NavLink
+								className="nav-link"
+								to="/"
+								style={activeLinkStyle}
+							>
 								Accueil
-							</Link>
+							</NavLink>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link" to="/tutoriels">
+							<NavLink
+								className="nav-link"
+								to="/tutoriels"
+								style={activeLinkStyle}
+							>
 								Tutoriels
-							</Link>
+							</NavLink>
 						</li>
 						<li className="nav-item">
-							<Link className="nav-link" to="/a-propos">
+							<NavLink
+								className="nav-link"
+								to="/a-propos"
+								style={activeLinkStyle}
+							>
 								A propos
-							</Link>
+							</NavLink>
 						</li>
 					</ul>
 				</div>
