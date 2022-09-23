@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Accueil from "./components/Accueil";
 import Apropos from "./components/Apropos";
+import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import Tutoriels from "./components/Tutoriels";
 
@@ -12,6 +13,7 @@ function App() {
 				<Route path="/" element={<Accueil />} />
 				<Route path="tutoriels" element={<Tutoriels />} />
 				<Route path="a-propos" element={<Apropos />} />
+				<Route path="contactez-nous" element={<Contact />} />
 			</Routes>
 		</div>
 	);
