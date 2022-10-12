@@ -1,9 +1,8 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
-const Tutoriels = () => {
+const ListesDesTutoriels = () => {
 	const [posts, setPosts] = useState([]);
 	useEffect(() => {
 		fetch("https://jsonplaceholder.typicode.com/posts?_limit=10")
@@ -14,7 +13,12 @@ const Tutoriels = () => {
 	}, []);
 	return (
 		<div className="px-4">
-			<h1>Mes Tutoriels</h1>
+			<div className="d-flex justify-content-between align-items-center mb-3">
+				<h1>Mes Tutoriels</h1>
+				<Link to="/tutoriels/ajouter" className="btn btn-dark py-3">
+					Ajouter un tutoriel
+				</Link>
+			</div>
 			<div className="row">
 				{posts?.map((post) => (
 					<div className="col-md-4 mb-4" key={post.id}>
@@ -32,7 +36,10 @@ const Tutoriels = () => {
 								<p className="card-text">
 									{post.body.slice(0, 100)}
 								</p>
-								<Link to="" className="btn btn-primary">
+								<Link
+									to={`/tutoriels/${post.id}`}
+									className="btn btn-primary"
+								>
 									Detail
 								</Link>
 							</div>
@@ -44,4 +51,4 @@ const Tutoriels = () => {
 	);
 };
 
-export default Tutoriels;
+export default ListesDesTutoriels;
