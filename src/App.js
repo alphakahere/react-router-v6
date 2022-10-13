@@ -16,7 +16,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Accueil />} />
 				<Route path="tutoriels" element={<Tutoriels />}>
-					<Route element={<ListesDesTutoriels />} />
+					<Route index element={<ListesDesTutoriels />} />
 					<Route path=":tutorielId" element={<DetailTutoriel />} />
 					<Route path="ajouter" element={<AjouterUnTutoriel />} />
 				</Route>
