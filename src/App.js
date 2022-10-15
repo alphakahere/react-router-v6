@@ -8,6 +8,7 @@ import Tutoriels from "./components/tutoriels/Tutoriels";
 import AjouterUnTutoriel from "./components/tutoriels/AjouterUnTutoriel";
 import DetailTutoriel from "./components/tutoriels/DetailTutoriel";
 import ListesDesTutoriels from "./components/tutoriels/ListesDesTutoriels";
+import Commentaire from "./components/tutoriels/Commentaire";
 
 function App() {
 	return (
@@ -17,7 +18,9 @@ function App() {
 				<Route path="/" element={<Accueil />} />
 				<Route path="tutoriels" element={<Tutoriels />}>
 					<Route index element={<ListesDesTutoriels />} />
-					<Route path=":tutorielId" element={<DetailTutoriel />} />
+					<Route path=":tutorielId" element={<DetailTutoriel />}>
+						<Route path="commentaires" element={<Commentaire />} />
+					</Route>
 					<Route path="ajouter" element={<AjouterUnTutoriel />} />
 				</Route>
 				<Route path="a-propos" element={<Apropos />} />

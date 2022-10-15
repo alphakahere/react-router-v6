@@ -32,8 +32,8 @@ const ListesDesTutoriels = () => {
 					Ajouter un tutoriel
 				</Link>
 			</div>
-			<div class="mb-5 w-25">
-				<label for="title" className="form-label">
+			<div className="mb-5 w-25">
+				<label htmlFor="title" className="form-label">
 					Filtrer par titre
 				</label>
 				<input
