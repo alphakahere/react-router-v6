@@ -5,7 +5,7 @@ const Tutoriels = () => {
 	return (
 		<div>
 			<div className="outlet-container">
-				<Outlet />
+				<Outlet context={{ message: "hello, voici ta donnée partagée" }} />
 			</div>
 		</div>
 	);
